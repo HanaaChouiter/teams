@@ -5,11 +5,14 @@ import TeamInfo from './components/TeamInfo'
 
 class App extends React.Component {
   render() {
+    let team = teams.map(team=>(
+      <TeamInfo name={team.shortName} />
+    ))
     return (
       <div className="container">
         <h1  class="text-primary">Teams</h1>
         <div className="row">
-          {teams.map(team => <TeamInfo team={team} />)}
+         {team}
         </div>
       </div>
     )
